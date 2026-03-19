@@ -1,0 +1,229 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Body: 전체 배경, 중앙 정렬 ===== */
+body {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 16px;
+  font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+}
+
+/* ===== 카드 컨테이너 ===== */
+.container {
+  width: 100%;
+  max-width: 600px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 40px 36px;
+}
+
+/* ===== 제목 ===== */
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #212121;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* ===== 입력 영역 ===== */
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+/* 텍스트 입력창 */
+.input-area input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1.5px solid #bdbdbd;
+  border-radius: 8px;
+  outline: none;
+  color: #212121;
+  transition: border-color 0.2s;
+}
+
+.input-area input::placeholder {
+  color: #9e9e9e;
+}
+
+.input-area input:focus {
+  border-color: #e53935;
+}
+
+/* 추가하기 버튼 */
+#btnAdd {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #e53935;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+#btnAdd:hover {
+  background-color: #c62828;
+}
+
+#btnAdd:active {
+  background-color: #b71c1c;
+}
+
+/* ===== 할일 개수 통계 ===== */
+.todo-stats {
+  font-size: 0.85rem;
+  color: #9e9e9e;
+  margin-bottom: 16px;
+  text-align: right;
+}
+
+/* ===== 필터 영역 ===== */
+.filter-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 8px;
+}
+
+.filter-btns {
+  display: flex;
+  gap: 6px;
+}
+
+/* 필터 버튼 */
+.filter-btn {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  color: #757575;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: #e53935;
+  color: #e53935;
+}
+
+/* 선택된 필터 버튼 강조 */
+.filter-btn.active {
+  background-color: #e53935;
+  border-color: #e53935;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 완료된 항목 삭제 버튼 */
+#btnClearCompleted {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  color: #757575;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+#btnClearCompleted:hover:not(:disabled) {
+  background-color: #e53935;
+  color: #ffffff;
+  border-color: #e53935;
+}
+
+#btnClearCompleted:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ===== 할일 목록 ===== */
+.todo-list {
+  list-style: none;
+}
+
+/* 할일 항목 */
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 4px;
+  font-size: 1rem;
+  color: #212121;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+/* 체크박스 */
+.todo-check {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #e53935;
+  flex-shrink: 0;
+}
+
+/* 텍스트 + 날짜를 묶는 컨테이너 */
+.todo-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* 할일 텍스트 */
+.todo-text {
+  font-size: 1rem;
+}
+
+/* 날짜 메타 정보 */
+.todo-meta {
+  font-size: 0.75rem;
+  color: #bdbdbd;
+}
+
+/* 완료된 항목: 취소선 + 회색 폰트 */
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #9e9e9e;
+}
+
+/* 삭제 버튼 */
+.btn-delete {
+  padding: 5px 12px;
+  font-size: 0.85rem;
+  color: #757575;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-delete:hover {
+  background-color: #e53935;
+  color: #ffffff;
+  border-color: #e53935;
+}
